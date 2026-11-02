@@ -1,0 +1,32 @@
+.dash {
+ display: grid; 
+ gap: 1rem; 
+ padding: 1rem; 
+ min-height: 100vh;
+ grid-template-columns: 12rem 1fr 1fr;
+ grid-template-rows: auto auto 1fr;
+ grid-template-areas:
+ "top top top"
+ "side stats stats"
+ "side chart1 chart2";
+}
+.top { grid-area: top; } 
+.side { grid-area: side; }
+.stats {
+    grid-area: stats; 
+    display: grid; 
+    gap: 1rem;
+    grid-template-columns: repeat(4, 1fr);
+}
+.chart1 { grid-area: chart1; } 
+.chart2 { grid-area: chart2; }
+.stat, .chart1, .chart2, .top, .side { 
+    background: #e68c06; 
+    padding: 1.5rem; 
+}
+@media (max-width: 800px){
+.dash { 
+    grid-template-columns: 1fr;
+    grid-template-areas: "top" "stats" "chart1" "chart2" "side"; }
+.stats { grid-template-columns: repeat(2, 1fr); }
+}
